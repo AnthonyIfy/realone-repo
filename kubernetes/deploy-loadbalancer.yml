@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ak-angular-app-poc-deployment
+  name: ak-angular-app1-poc-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: ak-angular-app
+      app: ak-angular-app1
   template:
     metadata:
       labels:
-        app: ak-angular-app
+        app: ak-angular-app1
     spec:
       containers:
-      - name: ak-angular-app
+      - name: ak-angular-app1
         image: ananthkannan/myspringbootapp:latest
         ports:
         - containerPort: 8085
@@ -26,7 +26,7 @@ metadata:
   name: ak-angular-svc
 spec:
   selector:
-    app: ak-angular-app
+    app: ak-angular-app1
   ports:
     - protocol: TCP
       port: 8085
